@@ -8,24 +8,21 @@ html {
 }
 
 body {
-  /* Removemos a cor de fundo daqui para que o canvas apareça */
   font-family: "Courier New", Courier, monospace;
   color: #ffffff;
 }
 
-/* Estilo para o Canvas do fundo animado */
 #matrix-canvas {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* Coloca o canvas atrás de todo o conteúdo */
+  z-index: -1;
 }
 
 header {
   padding: 1rem 2rem;
-  /* Fundo semi-transparente para melhor legibilidade */
   background-color: rgba(14, 13, 27, 0.85);
 }
 
@@ -35,11 +32,10 @@ h1 {
 
 .container {
   display: flex;
-  min-height: 100vh; /* Usamos min-height para garantir que o container se estique */
+  min-height: 100vh;
 }
 
 .sidebar {
-  /* Fundo semi-transparente */
   background-color: rgba(18, 18, 18, 0.8);
   padding: 30px;
   width: 300px;
@@ -89,7 +85,6 @@ h1 {
 .conteudo {
   flex: 1;
   padding: 120px 60px 60px 60px;
-  /* Fundo transparente */
   background-color: transparent;
 }
 
@@ -116,7 +111,6 @@ button:hover {
 
 .topo {
   width: 100%;
-  /* Fundo semi-transparente */
   background-color: rgba(14, 13, 27, 0.9);
   border-bottom: 1px solid #06402b;
   padding: 16px 40px;
@@ -181,7 +175,6 @@ button:hover {
   background-color: #0d6140;
 }
 
-/* Responsivo */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
@@ -201,37 +194,34 @@ button:hover {
   }
 }
 
-/* Estilo geral para as novas seções */
 .secao-conteudo {
-  padding: 80px 60px; /* Espaçamento interno para não ficar colado nas bordas */
-  max-width: 1200px;  /* Limita a largura do conteúdo para melhor leitura em telas grandes */
-  margin: 0 auto;     /* Centraliza a seção na página */
-  background-color: rgba(14, 13, 27, 0.9); /* Fundo semi-transparente para ver a animação */
-  border-bottom: 1px solid #06402b; /* Linha sutil para separar as seções */
+  padding: 80px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: rgba(14, 13, 27, 0.9);
+  border-bottom: 1px solid #06402b;
 }
 
-/* Estilo para os títulos de cada seção (h2) */
 .secao-conteudo h2 {
   font-size: 2.2em;
-  color: #6aff70;     /* Cor verde para destaque, mantendo a identidade visual */
-  text-align: center; /* Centraliza o título */
-  margin-bottom: 40px; /* Espaço abaixo do título */
+  color: #6aff70;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-/* Ajustes para telas menores (celulares) */
 @media (max-width: 768px) {
   .secao-conteudo {
-    padding: 60px 30px; /* Diminui o espaçamento em telas menores */
+    padding: 60px 30px;
   }
 }
-/* ===== ESTILOS DO FORMULÁRIO DE CONTATO ===== */
 
+/* ===== FORMULÁRIO DE CONTATO ===== */
 #form-contato {
-  max-width: 600px; /* Limita a largura do formulário */
-  margin: 40px auto 0; /* Centraliza o formulário e dá um espaço no topo */
+  max-width: 600px;
+  margin: 40px auto 0;
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Espaço entre os grupos de campos */
+  gap: 20px;
 }
 
 .form-grupo {
@@ -241,7 +231,7 @@ button:hover {
 
 .form-grupo label {
   color: #ccc;
-  margin-bottom: 8px; /* Espaço entre a etiqueta e o campo */
+  margin-bottom: 8px;
   font-size: 0.9em;
 }
 
@@ -259,15 +249,74 @@ button:hover {
 
 #form-contato input:focus,
 #form-contato textarea:focus {
-  outline: none; /* Remove a borda azul padrão do navegador */
-  border-color: #6aff70; /* Muda a cor da borda ao focar */
-  box-shadow: 0 0 8px rgba(106, 255, 112, 0.4); /* Adiciona um brilho verde */
+  outline: none;
+  border-color: #6aff70;
+  box-shadow: 0 0 8px rgba(106, 255, 112, 0.4);
 }
 
-/* O botão de submit já pega o estilo geral de "button", mas podemos garantir que ocupe 100% da largura */
 #form-contato button {
   width: 100%;
   padding: 15px;
   font-size: 1.1em;
   font-weight: bold;
+}
+
+/* ===== PROJETOS ===== */
+.projetos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.card-projeto {
+  background-color: rgba(18, 18, 18, 0.8);
+  border: 1px solid #06402b;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-projeto img {
+  max-width: 100%;
+  border-radius: 6px;
+  border: 1px solid #06402b;
+  margin-bottom: 15px;
+}
+
+.card-projeto h3 {
+  color: #6aff70;
+  margin-bottom: 10px;
+}
+
+.card-projeto p {
+  font-size: 0.95em;
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+.botoes-projeto {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.botoes-projeto a {
+  background-color: #06402b;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9em;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.botoes-projeto a:hover {
+  background-color: #0d6140;
+  transform: scale(1.05);
+}
+
+.card-projeto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 10px rgba(106, 255, 112, 0.4);
 }
