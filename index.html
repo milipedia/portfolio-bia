@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bia - Desenvolvedora</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="matrix-canvas"></canvas>
+
+  <header class="topo">
+    <nav class="menu">
+      <div class="logo">Bia.dev</div>
+      <ul class="links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#portfolio">Portfólio</a></li>
+        <li><a href="#sobre">Sobre Mim</a></li>
+        <li><a href="#contato">Contato</a></li>
+        </ul>
+      <a href="mailto:biancalima78950@gmail.com" class="botao-contato">Vamos conversar</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <aside class="sidebar">
+      <img src="img/bia.jpg" alt="Foto da Bia" class="foto-perfil">
+      <h2>Bia Silva</h2>
+      <p>Dev Full-stack & entusiasta de tecnologia</p>
+      <p class="localizacao">📍 Porto Alegre - RS</p>
+      <div class="redes">
+        <a href="https://www.linkedin.com/in/bianca-silva-774b96144">LinkedIn</a>
+        <a href="https://github.com/milipedia">GitHub</a>
+        <a href="mailto:biancalima78950@gmail.com">Email</a>
+      </div>
+    </aside>
+
+    <main class="conteudo">
+      <h1>Olá, eu sou a Bia</h1>
+      <p>Desenvolvedora apaixonada por criar experiências web com foco em design, acessibilidade e propósito.</p>
+      <button>Ver meus projetos</button>
+    </main>
+  </div></main>
+  </div> <section id="sobre" class="secao-conteudo">
+    <h2>Sobre Mim</h2>
+    <p>Me chamo Bianca, tenho 24 anos e estou atualmente cursando Analise e desenvolvimento de sistemas pela Uninter.<br>
+        Eu tenho tenho curiosidade por aprender novas tecnologias e sempre busco me atualizar com as tendências do mercado.<br>
+        Sou apaixonada por tecnologia e acredito que a programação é uma forma de arte que pode transformar ideias em realidade.<br>
+        Acredito que atras de todo 'como' existe um 'porquê' e é isso que me motiva a continuar aprendendo e crescendo na área.<br>
+        "Se você está sempre tentando ser normal, nunca saberá o quão incrível você pode ser." (Maya Angelou)
+    </p>
+    </section>
+
+  <section id="portfolio" class="secao-conteudo">
+    <h2>Meus Projetos</h2>
+    <p>Este é o espaço onde você vai mostrar os cards dos seus projetos.</p>
+    </section>
+
+  <section id="contato" class="secao-conteudo">
+  <h2>Vamos Conversar?</h2>
+  <p>Estou sempre aberto a novas oportunidades e parcerias. Preencha o formulário abaixo e entrarei em contato em breve.</p>
+  
+  <form id="form-contato" action="https://formspree.io/f/mldlwzyn" method="POST">
+    
+    <div class="form-grupo">
+      <label for="nome">Seu Nome</label>
+      <input type="text" id="nome" name="name" placeholder="Digite seu nome completo" required>
+    </div>
+    
+    <div class="form-grupo">
+      <label for="email">Seu E-mail</label>
+      <input type="email" id="email" name="email" placeholder="exemplo@email.com" required>
+    </div>
+    
+    <div class="form-grupo">
+      <label for="mensagem">Sua Mensagem</label>
+      <textarea id="mensagem" name="message" rows="6" placeholder="Deixe sua mensagem aqui..." required></textarea>
+    </div>
+    
+    <button type="submit">Enviar Mensagem</button>
+
+  </form>
+</section>
+
+  <script src="matrix.js"></script>
+</body>
+</html>

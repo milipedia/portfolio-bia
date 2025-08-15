@@ -1,0 +1,273 @@
+html {
+  scroll-behavior: smooth;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* Removemos a cor de fundo daqui para que o canvas apareça */
+  font-family: "Courier New", Courier, monospace;
+  color: #ffffff;
+}
+
+/* Estilo para o Canvas do fundo animado */
+#matrix-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Coloca o canvas atrás de todo o conteúdo */
+}
+
+header {
+  padding: 1rem 2rem;
+  /* Fundo semi-transparente para melhor legibilidade */
+  background-color: rgba(14, 13, 27, 0.85);
+}
+
+h1 {
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh; /* Usamos min-height para garantir que o container se estique */
+}
+
+.sidebar {
+  /* Fundo semi-transparente */
+  background-color: rgba(18, 18, 18, 0.8);
+  padding: 30px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 2px solid #06402b;
+  margin-top: 80px;
+}
+
+.foto-perfil {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #06402b;
+  margin-bottom: 20px;
+}
+
+.sidebar h2 {
+  margin: 10px 0 5px;
+  color: #6aff70;
+}
+
+.sidebar p {
+  margin: 4px 0;
+  text-align: center;
+}
+
+.localizacao {
+  font-size: 0.9em;
+  color: #ccc;
+}
+
+.redes a {
+  display: block;
+  margin-top: 10px;
+  color: #6aff70;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.redes a:hover {
+  color: #ffffff;
+}
+
+.conteudo {
+  flex: 1;
+  padding: 120px 60px 60px 60px;
+  /* Fundo transparente */
+  background-color: transparent;
+}
+
+.conteudo h1 {
+  font-size: 2.5em;
+  color: #6aff70;
+}
+
+button {
+  margin-top: 20px;
+  background-color: #06402b;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  font-size: 1em;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 0 5px #6aff70, 0 0 10px #06402b;
+}
+
+button:hover {
+  background-color: #0d6140;
+}
+
+.topo {
+  width: 100%;
+  /* Fundo semi-transparente */
+  background-color: rgba(14, 13, 27, 0.9);
+  border-bottom: 1px solid #06402b;
+  padding: 16px 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.4rem;
+  color: #6aff70;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.logo:hover {
+  color: #47ff5f;
+}
+
+.menu .links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu .links li a {
+  color: white;
+  text-decoration: none;
+  font-family: "Courier New", Courier, monospace;
+  transition: color 0.2s;
+}
+
+.menu .links li a:hover {
+  color: #6aff70;
+}
+
+.botao-contato {
+  background-color: #06402b;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.botao-contato:hover {
+  background-color: #0d6140;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 80px;
+  }
+
+  .conteudo {
+    padding: 40px 30px;
+  }
+}
+
+/* Estilo geral para as novas seções */
+.secao-conteudo {
+  padding: 80px 60px; /* Espaçamento interno para não ficar colado nas bordas */
+  max-width: 1200px;  /* Limita a largura do conteúdo para melhor leitura em telas grandes */
+  margin: 0 auto;     /* Centraliza a seção na página */
+  background-color: rgba(14, 13, 27, 0.9); /* Fundo semi-transparente para ver a animação */
+  border-bottom: 1px solid #06402b; /* Linha sutil para separar as seções */
+}
+
+/* Estilo para os títulos de cada seção (h2) */
+.secao-conteudo h2 {
+  font-size: 2.2em;
+  color: #6aff70;     /* Cor verde para destaque, mantendo a identidade visual */
+  text-align: center; /* Centraliza o título */
+  margin-bottom: 40px; /* Espaço abaixo do título */
+}
+
+/* Ajustes para telas menores (celulares) */
+@media (max-width: 768px) {
+  .secao-conteudo {
+    padding: 60px 30px; /* Diminui o espaçamento em telas menores */
+  }
+}
+/* ===== ESTILOS DO FORMULÁRIO DE CONTATO ===== */
+
+#form-contato {
+  max-width: 600px; /* Limita a largura do formulário */
+  margin: 40px auto 0; /* Centraliza o formulário e dá um espaço no topo */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espaço entre os grupos de campos */
+}
+
+.form-grupo {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-grupo label {
+  color: #ccc;
+  margin-bottom: 8px; /* Espaço entre a etiqueta e o campo */
+  font-size: 0.9em;
+}
+
+#form-contato input,
+#form-contato textarea {
+  background-color: #121212;
+  color: #ffffff;
+  border: 1px solid #06402b;
+  border-radius: 6px;
+  padding: 12px 15px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1em;
+  transition: all 0.2s ease-in-out;
+}
+
+#form-contato input:focus,
+#form-contato textarea:focus {
+  outline: none; /* Remove a borda azul padrão do navegador */
+  border-color: #6aff70; /* Muda a cor da borda ao focar */
+  box-shadow: 0 0 8px rgba(106, 255, 112, 0.4); /* Adiciona um brilho verde */
+}
+
+/* O botão de submit já pega o estilo geral de "button", mas podemos garantir que ocupe 100% da largura */
+#form-contato button {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.1em;
+  font-weight: bold;
+}
