@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bia - Desenvolvedora</title>
+  <title>Bia.dev | Portfólio</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <canvas id="matrix-canvas"></canvas>
@@ -12,88 +15,110 @@
   <header class="topo">
     <nav class="menu">
       <div class="logo">Bia.dev</div>
-      <ul class="links">
-        <li><a href="#">Home</a></li>
+
+      <button class="botao-menu" aria-label="Abrir Menu" aria-expanded="false">
+        <span class="hamburguer"></span>
+      </button>
+
+      <ul class="links" id="menu-links">
+        <li><a href="#home">Home</a></li>
         <li><a href="#portfolio">Portfólio</a></li>
         <li><a href="#sobre">Sobre Mim</a></li>
         <li><a href="#contato">Contato</a></li>
-        </ul>
-      <a href="mailto:biancalima78950@gmail.com" class="botao-contato">Vamos conversar</a>
+        <li class="link-mobile"><a href="mailto:biancalima78950@gmail.com" class="botao-contato">Vamos conversar</a></li>
+      </ul>
+
+      <a href="mailto:biancalima78950@gmail.com" class="botao-contato link-desktop">Vamos conversar</a>
     </nav>
   </header>
 
-  <div class="container">
+  <div class="container-geral">
     <aside class="sidebar">
       <img src="img/bia.jpg" alt="Foto da Bia" class="foto-perfil">
       <h2>Bia Silva</h2>
       <p>Dev Full-stack & entusiasta de tecnologia</p>
-      <p class="localizacao">📍 Porto Alegre - RS</p>
+      <p class="localizacao">📍 Porto Alegre, RS</p>
       <div class="redes">
-        <a href="https://www.linkedin.com/in/bianca-silva-774b96144">LinkedIn</a>
-        <a href="https://github.com/milipedia">GitHub</a>
+        <a href="https://www.linkedin.com/in/bianca-silva-774b96144" target="_blank">LinkedIn</a>
+        <a href="https://github.com/milipedia" target="_blank">GitHub</a>
         <a href="mailto:biancalima78950@gmail.com">Email</a>
       </div>
     </aside>
 
-    <main class="conteudo">
-      <h1>Olá, eu sou a Bia</h1>
-      <p>Desenvolvedora apaixonada por criar experiências web com foco em design, acessibilidade e propósito.</p>
-      <button>Ver meus projetos</button>
+    <main class="conteudo-principal">
+      <section id="home" class="secao-conteudo">
+        <h1 id="titulo-animado">Olá, eu sou a Bia</h1>
+        <p>Desenvolvedora apaixonada por criar experiências web com foco em design, acessibilidade e propósito.</p>
+        <a href="#portfolio" class="botao-principal">Ver meus projetos</a>
+      </section>
+
+      <section id="sobre" class="secao-conteudo card-secao">
+        <h2>Sobre Mim</h2>
+        <p>Me chamo Bianca, tenho 24 anos e estou atualmente cursando Analise e desenvolvimento de sistemas pela Uninter.<br>
+          Eu tenho curiosidade por aprender novas tecnologias e sempre busco me atualizar com as tendências do mercado.<br>
+          Sou apaixonada por tecnologia e acredito que a programação é uma forma de arte que pode transformar ideias em realidade.<br>
+          Acredito que atrás de todo 'como' existe um 'porquê' e é isso que me motiva a continuar aprendendo e crescendo na área.<br><br>
+          <em>"Se você está sempre tentando ser normal, nunca saberá o quão incrível você pode ser." (Maya Angelou)</em>
+        </p>
+      </section>
+
+      <section id="portfolio" class="secao-conteudo">
+        <h2>Meus Projetos</h2>
+        <div class="projetos-grid">
+          <div class="card-projeto">
+            <img src="img/amigo-secreto.jpg" alt="Sorteador de Amigo Secreto">
+            <div class="card-conteudo">
+              <h3>Sorteador de Amigo Secreto</h3>
+              <p class="tecnologias">⚙️ HTML • CSS • JavaScript</p>
+              <p>Aplicação web para cadastrar participantes e realizar sorteio aleatório de forma prática.</p>
+              <div class="botoes-projeto">
+                <a href="https://milipedia.github.io/amigo-secreto/" target="_blank">🔗 Ver Online</a>
+                <a href="https://github.com/milipedia/amigo-secreto" target="_blank">📂 Código</a>
+              </div>
+            </div>
+          </div>
+          <div class="card-projeto">
+            <img src="img/favoritos.png" alt="Landing page - Favoritos">
+             <div class="card-conteudo">
+              <h3>Landing page - Favoritos</h3>
+              <p class="tecnologias">⚙️ HTML • CSS • JavaScript</p>
+              <p>Página com meus filmes e livros favoritos, com links para o IMDB e Kindle highlights.</p>
+              <div class="botoes-projeto">
+                <a href="https://milipedia.github.io/bia-favoritos" target="_blank">🔗 Ver Online</a>
+                <a href="https://github.com/milipedia/bia-favoritos" target="_blank">📂 Código</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section id="contato" class="secao-conteudo card-secao">
+        <h2>Vamos Conversar?</h2>
+        <p>Estou aberta a novas oportunidades e parcerias. Preencha o formulário abaixo e entrarei em contato.</p>
+        <form id="form-contato" action="https://formspree.io/f/mldlwzyn" method="POST" novalidate>
+          <div class="form-grupo">
+            <label for="nome">Seu Nome</label>
+            <input type="text" id="nome" name="name" placeholder="Digite seu nome completo" required>
+            <span class="mensagem-erro"></span>
+          </div>
+          <div class="form-grupo">
+            <label for="email">Seu E-mail</label>
+            <input type="email" id="email" name="email" placeholder="exemplo@email.com" required>
+            <span class="mensagem-erro"></span>
+          </div>
+          <div class="form-grupo">
+            <label for="mensagem">Sua Mensagem</label>
+            <textarea id="mensagem" name="message" rows="6" placeholder="Deixe sua mensagem aqui..." required></textarea>
+            <span class="mensagem-erro"></span>
+          </div>
+          <button type="submit">Enviar Mensagem</button>
+        </form>
+      </section>
     </main>
-  </div></main>
-  </div> <section id="sobre" class="secao-conteudo">
-    <h2>Sobre Mim</h2>
-    <p>Me chamo Bianca, tenho 24 anos e estou atualmente cursando Analise e desenvolvimento de sistemas pela Uninter.<br>
-        Eu tenho tenho curiosidade por aprender novas tecnologias e sempre busco me atualizar com as tendências do mercado.<br>
-        Sou apaixonada por tecnologia e acredito que a programação é uma forma de arte que pode transformar ideias em realidade.<br>
-        Acredito que atras de todo 'como' existe um 'porquê' e é isso que me motiva a continuar aprendendo e crescendo na área.<br>
-        "Se você está sempre tentando ser normal, nunca saberá o quão incrível você pode ser." (Maya Angelou)
-    </p>
-    </section>
-
-  <section id="portfolio" class="secao-conteudo">
-  <h2>Meus Projetos</h2>
-  <div class="projetos-grid">
-    <!-- Card do Sorteador de Amigo Secreto -->
-    <div class="card-projeto">
-      <img src="img/amigo-secreto.jpg" alt="Sorteador de Amigo Secreto">
-      <h3>Sorteador de Amigo Secreto</h3>
-      <p>Aplicação web para cadastrar participantes e realizar sorteio aleatório de forma prática e intuitiva.</p>
-      <div class="botoes-projeto">
-        <a href="https://milipedia.github.io/amigo-secreto/" target="_blank">🔗 Ver Online</a>
-        <a href="https://github.com/milipedia/amigo-secreto" target="_blank">📂 Código no GitHub</a>
-      </div>
-    </div>
   </div>
-</section>
-
-
-  <section id="contato" class="secao-conteudo">
-  <h2>Vamos Conversar?</h2>
-  <p>Estou sempre aberta a novas oportunidades e parcerias. Preencha o formulário abaixo e entrarei em contato em breve.</p>
   
-  <form id="form-contato" action="https://formspree.io/f/mldlwzyn" method="POST">
-    
-    <div class="form-grupo">
-      <label for="nome">Seu Nome</label>
-      <input type="text" id="nome" name="name" placeholder="Digite seu nome completo" required>
-    </div>
-    
-    <div class="form-grupo">
-      <label for="email">Seu E-mail</label>
-      <input type="email" id="email" name="email" placeholder="exemplo@email.com" required>
-    </div>
-    
-    <div class="form-grupo">
-      <label for="mensagem">Sua Mensagem</label>
-      <textarea id="mensagem" name="message" rows="6" placeholder="Deixe sua mensagem aqui..." required></textarea>
-    </div>
-    
-    <button type="submit">Enviar Mensagem</button>
-
-  </form>
-</section>
-
   <script src="matrix.js"></script>
+  <script src="script.js"></script> 
 </body>
 </html>
